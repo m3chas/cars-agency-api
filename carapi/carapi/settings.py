@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', # Django Rest_Framework to build our Car API
+    'rest_framework', # Django Rest_Framework to build the Car API Django App.
+    'api', # Added custom API Django APP to manage CRUD operations.
 ]
 
 MIDDLEWARE = [
