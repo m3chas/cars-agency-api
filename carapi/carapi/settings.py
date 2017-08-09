@@ -38,8 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', # Django Rest_Framework to build the Car API Django App.
+    'django_filters',
+    'rest_framework_docs',
     'api', # Added custom API Django APP to manage CRUD operations.
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,8 +85,12 @@ WSGI_APPLICATION = 'carapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cars',
+        'USER': 'cars',
+        'PASSWORD': 'c4rsDemo',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
