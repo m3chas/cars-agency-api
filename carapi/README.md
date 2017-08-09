@@ -1,8 +1,8 @@
-# Cars API
+# Cars Agency API
 
 ## Introduction
 
-> Create a RESTful API service that will make CRUD operations possible on the collection of cars.
+> Create a RESTful API service that will make CRUD operations possible on the collection of cars agency.
 
 ## Requirements
 
@@ -15,7 +15,7 @@
 > psycopg2==2.7.3
 > pytz==2017.2
 
-## Options
+## Business Logic
 
 > Create: It should be possible to create new car objects via API
 > Read: It should be possible to read existing car objects via API.
