@@ -7,6 +7,7 @@
 ## Requirements
 
 > PostgreSQL
+
 > Python 3.x
 > Django==1.11.4
 > django-filter==1.0.4
