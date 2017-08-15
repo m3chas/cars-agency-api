@@ -1,8 +1,9 @@
-# Django Serializer class with fields that correspond to the Model fields
-# important to display data from the API to a form of data we can understand, like JSON or XML.
+"""Django Serializer class with fields that correspond to the Model fields
+   important to display data from the API to a form of data we can understand, like JSON or XML."""
 
 from rest_framework import serializers
 from .models import Car
+
 
 class CarSerializer(serializers.ModelSerializer):
 	"""Serializer to map the car model instance into JSON format."""

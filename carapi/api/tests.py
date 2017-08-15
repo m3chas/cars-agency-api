@@ -1,5 +1,5 @@
-# This quick project, has been done via Test-Driven Development (TDD).
-# Code without tests is broken as designed. — Jacob Kaplan-Moss.
+"""This quick project, has been done via Test-Driven Development (TDD).
+   Code without tests is broken as designed. — Jacob Kaplan-Moss"""
 
 from rest_framework.test import APIClient
 from rest_framework import status
@@ -7,24 +7,26 @@ from django.core.urlresolvers import reverse
 from django.test import TestCase
 from .models import Car
 
+
 class ModelTestCase(TestCase):
     """Defines our test suite for the car model."""
-	
+
     def setUp(self):
         """Define test client and test variables."""
-		self.car_model = "Celica"
-		self.car = Car(model=self.car_model)
+        self.car_model = "Celica"
+        self.car = Car(model=self.car_model)
 
-	def test_model_can_create_a_car(self):
+    def test_model_can_create_a_car(self):
         """Test the car model can create a car."""
-		latest_count = Car.objects.count()
-		self.car.save()
-		new_count  = Car.objects.count()
-		self.assertNotEqual(latest_count, new_count)
+        latest_count = Car.objects.count()
+        self.car.save()
+        new_count = Car.objects.count()
+        self.assertNotEqual(latest_count, new_count)
 
     def test_model_returns_readable_data(self):
         """Test a readable string is returned for the car model instance."""
         self.assertEqual(str(self.car), self.name)
+
 
 class ViewTestCase(TestCase):
     """Test Suite for API views."""
@@ -32,7 +34,7 @@ class ViewTestCase(TestCase):
     def setUp(self):
         """Define test client and test variables."""
         self.client = APIClient()
-        self.car_data = {'model': 'Celica', 'make': 'Toyota', 'year': '1986', 'variant':'Coupe', 'image':''}
+        self.car_data = {'model': 'Celica', 'make': 'Toyota', 'year': '1986', 'variant': 'Coupe', 'image': ''}
         self.response = self.client.post(
             reverse('create'),
             self.car_data,
