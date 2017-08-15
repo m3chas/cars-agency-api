@@ -150,5 +150,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# 
+.idea/*
+
 # settings
 carapi/parameters.py
+db.sqlite3
