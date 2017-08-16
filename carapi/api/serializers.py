@@ -11,5 +11,5 @@ class CarSerializer(serializers.ModelSerializer):
 	class Meta:
 		"""Serializer a model and their fields."""
 		model = Car
-		fields = ('id', 'model', 'make', 'year', 'variant', 'image', 'date_created', 'date_modified')
+		fields = ('id', 'model', 'manufacturer', 'year', 'variant', 'image', 'date_created', 'date_modified')
 		read_only_fields = ('date_created', 'date_modified')
